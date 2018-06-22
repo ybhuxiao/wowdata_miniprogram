@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <text wx:for="{{searchTops}}" class="searchtops">
+    <text class="searchtopname">{{item[0]}}</text>
+    <text class="searchtopcount">{{item[1]}}</text>
+  </text>
+  <scroll-view class="bmitems" scroll-y style="width: 100%">
+     <view wx:for="{{bmItems}}" class="bmitem"> 
+        <view>
+          <text class="itemName">{{item.itemName}}</text>
+          <text class="type"> ({{item.type}})</text>
+        </view>
+        <view>{{item.realmName}}</view>
+        <!-- <view>{{item.refreshTime}}</view>
+        <view>{{item.nowPrice}}</view>
+        <view>{{item.endTime}}</view>
+        <view>{{item.updateTime}}</view> -->
+     </view> 
+    <!-- <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell" wx:for="{{bmItems}}">
+            <view class="weui-cell__bd">{{item.itemName}}</view>
+            <view class="weui-cell__ft">{{item.realmName}}</view>
+            <view class="weui-cell__ft">{{item.realmName}}</view>
+        </view>
+    </view> -->
+  </scroll-view>
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>
